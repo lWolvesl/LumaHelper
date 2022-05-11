@@ -53,14 +53,14 @@ func createFile(start int, value string) {
 
 func setProxy(rawUrl string) http.Client {
 	if rawUrl == "" {
-		client := http.Client{}
+		client = http.Client{}
 		return client
 	}
 	ProxyUri, err := url.Parse(rawUrl)
 	if err != nil {
 		log.Fatal("parse url error: ", err)
 	}
-	client := http.Client{
+	client = http.Client{
 		Transport: &http.Transport{
 			// 设置代理
 			Proxy: http.ProxyURL(ProxyUri),
