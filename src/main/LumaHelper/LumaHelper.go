@@ -184,7 +184,7 @@ func start() {
 	var choose int
 	fmt.Println("请选择：\n" +
 		"1.添加游戏" +
-		"2.添加该DLC")
+		"2.添加该游戏的DLC")
 	fmt.Scan(&choose)
 	if choose == 1 {
 		createFile(getIndex(), game)
