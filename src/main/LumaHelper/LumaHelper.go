@@ -181,6 +181,15 @@ func start() {
 	//查找游戏
 	game := SelectGame()
 
+	var choose int
+	fmt.Println("请选择：\n" +
+		"1.添加游戏" +
+		"2.添加该DLC")
+	fmt.Scan(&choose)
+	if choose == 1 {
+		createFile(getIndex(), game)
+	}
+
 	//查找DLC
 	SelectDLC(game)
 }
@@ -197,11 +206,7 @@ func run() {
 		setProxy(rawUrl)
 	}
 
-	//查找游戏
-	game := SelectGame()
-
-	//查找DLC
-	SelectDLC(game)
+	start()
 
 	var check = 0
 	fmt.Println("退出系统请输入0/继续添加请输入1")
